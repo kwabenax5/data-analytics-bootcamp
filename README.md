@@ -1,14 +1,14 @@
-# Data Analytics Bootcamp
+### Data Analytics Bootcamp
 
 A 24-week hands-on data analytics portfolio built to refresh and strengthen my skills in SQL, Power BI, Python, and business analysis.
 
-## About This Repository
+### About This Repository
 
 This repository documents my journey from refreshing my data analytics skills to becoming job-ready for a Data Analyst position.
 
 The focus is on solving realistic business problems using data, communicating insights clearly, and building portfolio projects that demonstrate practical analytical skills.
 
-## Tools & Technologies
+### Tools & Technologies
 
 - SQL
 - MySQL
@@ -19,7 +19,7 @@ The focus is on solving realistic business problems using data, communicating in
 - Excel
 - Git & GitHub
 
-## Projects
+### Projects
 
 ### 1. Pizza Sales Analysis
 
@@ -47,3 +47,23 @@ Analyzed pizza sales data to answer business questions related to:
 - `ORDER BY`
 - `LIMIT`
 - Date and time functions
+
+### Key Findings
+
+### Revenue Insights
+
+- The Thai Chicken Pizza generated the highest revenue, earning **43,434.25**.
+- The Classic pizza category generated the highest overall revenue, with **220,053.10**.
+
+### Sales Insights
+
+- The Big Meat Pizza (Small) was the best-selling individual pizza, with **1,914 units sold**.
+- **July** generated the highest monthly revenue, totaling **72,557.90**.
+- The busiest ordering hour was **12:00 PM**, with **2,520 orders** placed during that hour.
+
+## Business Recommendations
+
+- Keep ingredients for the Thai Chicken Pizza well stocked since it is the highest revenue-generating product.
+- Expand and promote the Classic category because it contributes the largest share of total revenue.
+- Increase staffing and kitchen capacity around **12 PM** to reduce waiting times during peak demand.
+- Launch seasonal marketing campaigns during July to maximize sales during the highest-performing month.
