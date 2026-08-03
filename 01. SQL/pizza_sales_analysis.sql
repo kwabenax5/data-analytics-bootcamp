@@ -53,33 +53,35 @@ DESC
 
 --Which month had the highest revenue?--
 
-SELECT  YEAR(o.order_date) AS year,
-       MONTH(o.order_date ) AS months,
+SELECT  
+       MONTHNAME(o.order_date ) AS months,
        SUM(od.quantity * p.price) AS total_revenue 
 FROM orders o
 LEFT JOIN order_details od   
 ON o.order_id = od.order_id 
 LEFT JOIN pizzas p 
 ON od.pizza_id = p.pizza_id 
-GROUP BY months, year
+GROUP BY MONTHNAME(o.order_date )
 ORDER BY total_revenue DESC 
 LIMIT 1
  ;
 
 --What are the busiest hours of the day?--
 
-SELECT HOUR(o.order_time) AS busiest_hours,
-       SUM(od.quantity) AS total_quantity 
-FROM orders o 
-LEFT JOIN order_details od 
-ON od.order_id  = o.order_id 
-GROUP BY busiest_hours
-ORDER BY total_quantity DESC;
+SELECT
+    HOUR(order_time) AS hour_of_day,
+    COUNT(*) AS total_orders
+FROM orders
+GROUP BY hour_of_day
+ORDER BY total_orders DESC
+LIMIT 1;
+
 
 
 --Which pizzas sell a lot but generate less revenue?--
 
 SELECT     pt.name,
+            p.size,
        SUM(od.quantity * p.price) AS revenue,
        SUM(od.quantity) AS total_quntity,
        SUM(od.quantity * p.price) / SUM(od.quantity)  AS revenue_per_unit
@@ -88,7 +90,7 @@ LEFT JOIN pizzas p
 ON p.pizza_id = od.pizza_id 
 LEFT JOIN pizza_types pt 
 ON pt.pizza_type_id = p.pizza_type_id 
-GROUP BY pt.name
+GROUP BY pt.name, p.size
 ORDER BY total_quntity DESC ,revenue_per_unit ASC ;
 
 
